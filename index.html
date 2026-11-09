@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ CGI Greeting</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef1f7;
+      color: #1d2a44;
+      display: flex;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+
+    .box {
+      background: #ffffff;
+      width: 100%;
+      max-width: 420px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 { text-align: center; margin-bottom: 6px; }
+    .subtitle { text-align: center; color: #5d6680; margin-bottom: 24px; }
+
+    label { display: block; font-weight: bold; margin-bottom: 6px; }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #ccd2e0;
+      border-radius: 6px;
+      margin-bottom: 18px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #1d4ed8;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #ffffff;
+      background: #1d2a44;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #2c3c5e; }
+  </style>
+</head>
+<body>
+
+  <main class="box">
+    <h1>Welcome</h1>
+    <p class="subtitle">Enter your name to get a personalized greeting.</p>
+
+    <!-- The form sends the name to the C++ CGI program using the query string (GET) -->
+    <form action="/cgi-bin/greeting.exe" method="get">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" autocomplete="name"
+             placeholder="Enter your name" maxlength="50" required>
+      <button type="submit">Greet Me</button>
+    </form>
+  </main>
+
+</body>
+</html>
